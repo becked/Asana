@@ -5,11 +5,11 @@ require "JSON"
 require "net/https"
 require "yaml"
 
-config = YAML.loads(File.read("config.yaml"))
+config = YAML.load(File.read("config.yaml"))
 
 api_key = config["api_key"]
-workspace_id = WORKSPACE-ID
-assignee = ASSIGNEE-EMAIL
+workspace_id = config["workspace_id"]
+assignee = config["assignee"]
 
 # set up HTTPS connection
 uri = URI.parse("https://app.asana.com/api/1.0/tasks")

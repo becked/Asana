@@ -3,13 +3,11 @@
 require "rubygems"
 require "JSON"
 require "net/https"
+require "yaml"
 
-re 'yaml'
-conf = YAML.loads(File.read("config.yaml"))
-conf['foo'] #=> 'bar'
+config = YAML.loads(File.read("config.yaml"))
 
-
-api_key = API-KEY
+api_key = config["api_key"]
 workspace_id = WORKSPACE-ID
 assignee = ASSIGNEE-EMAIL
 

@@ -24,7 +24,7 @@ config["assignees"].each do |assignee|
   select { |e| e["completed"] == true and e["name"] =~ /^\[\d+\]/ }.each do |task|
     # Presumably the filter above will make sure this match is always successful ...
     hours = task["name"].match(/^\[(\d+)\]/)[1].to_i
-    # Not thrilled about having memberships to multiple projects (isn't that we have tagging?)
+    # Not thrilled about having memberships to multiple projects (isn't that why we have tagging?)
     task["projects"].each { |e| projects[e["name"]] += hours }
     assignees[task["assignee"]["name"]] += hours
   end

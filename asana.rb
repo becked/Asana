@@ -1,3 +1,6 @@
+# Class to deal with connecting to Asana's API
+
+
 require "net/https"
 require "json"
 require "yaml"
